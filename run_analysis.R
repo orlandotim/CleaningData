@@ -77,4 +77,4 @@ rm(features)
 agg_all <- aggregate(all_data, by= list(all_data$activity_labels, all_data$subject), FUN = mean, na.rm = FALSE)
 
 #write the file out.
-write.table(agg_all, file="tidy_HCI_data.txt", col.names=TRUE)
+write.table(agg_all, file="tidy_HCI_data.txt", row.name=FALSE)
