@@ -11,10 +11,6 @@
 ## Please upload your data set as a txt file created with write.table() using row.name=FALSE
 ## (do not cut and paste a dataset directly into the text box, as this may cause errors saving your submission).
 
-## We begin by putting the script in the same directory where we have the dataset directory
-## (One level up from the actual data files, like features.txt)
-
-
 
 library("reshape2")
 
@@ -23,9 +19,9 @@ library("reshape2")
 ## the basedirectory is  UCI HAR Dataset/
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt")
 
-features <- read.table("UCI HAR Dataset/features.txt") ## 561 obs of 2 vars, rownums incl
-features <- features[2] ## simplify, cut row numbers
-features <- as.vector(features[,1]) ## it works, but not pretty.
+features <- read.table("UCI HAR Dataset/features.txt") 
+features <- features[2] 
+features <- as.vector(features[,1]) 
 
 x_test <- read.table("UCI HAR Dataset/test/X_test.txt", colClasses = c("numeric"), col.names = features) ## 2947 obs of 561 vars
 y_test <- read.table("UCI HAR Dataset/test/y_test.txt") ## 2947 obs of 1 var
